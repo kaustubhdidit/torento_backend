@@ -17,21 +17,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL],
+    // origin: [process.env.FRONTEND_URL],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
-// const Item = mongoose.model('Item', itemSchema);
-
-// app.get("/api/items", async (req, res) => {
-//   try {
-//     const items = await Item.find();
-//     res.json(items);
-//   } catch (error) {
-//     res.status(500).json({ error: error.message });
-//   }
-// });
 
 // Using routes
 app.use("/api/v1/users", userRouter);

@@ -7,7 +7,7 @@ import jwt from "jsonwebtoken";
 export const newRoom= async(req,res, next)=>{
 
     try{
-        const {address,photo, price,title, description}=req.body;
+        const {address,photo,fbuid, price,title, area,residents, description}=req.body;
         let {name, phone,user}=req.body;
         const decoded = jwt.verify(user, process.env.JWT_SECRET);
          user= decoded.user.id;
@@ -19,11 +19,14 @@ export const newRoom= async(req,res, next)=>{
         await Room.create({
           name,
           phone,
+          fbuid,
           address,
             photo,
             price,
             title,
-            description,    
+            description,
+            area,   
+            residents, 
             user,
         })
 

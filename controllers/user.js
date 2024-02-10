@@ -29,7 +29,8 @@ try{
     // console.log(data)
     const authtoken=jwt.sign(data, process.env.JWT_SECRET);
     success=true;
-    res.json({success, authtoken});
+    console.log()
+    res.json({success, authtoken, data});
 
     sendCookie(user, res, `Welcome back, ${user.name}`, 200);
 }

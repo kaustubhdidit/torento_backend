@@ -9,7 +9,15 @@ const schema = new mongoose.Schema({
     type: Boolean,
     default:true,
   },
+  area:{
+    type: String,
+    required: true,
+  },
   phone: {
+    type: String,
+    required: true,
+  },
+  fbuid:{
     type: String,
     required: true,
   },
@@ -17,7 +25,10 @@ const schema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  
+  residents:{
+    type: Number,
+    required: true,
+  },
   photo: {
     type: String,
     default: false,
